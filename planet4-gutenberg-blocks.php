@@ -192,6 +192,7 @@ function set_allowed_block_types( $allowed_block_types, $post ) {
 		'core/categories',
 		'core/latest-comments',
 		'core/latest-posts',
+		'core/columns',
 		'core/embed',
 		'core-embed/twitter',
 		'core-embed/youtube',
@@ -253,7 +254,7 @@ function set_allowed_block_types( $allowed_block_types, $post ) {
 	return $allowed_block_types;
 }
 
-add_filter( 'allowed_block_types', 'set_allowed_block_types', 10, 2 );
+// add_filter( 'allowed_block_types', 'set_allowed_block_types', 10, 2 );
 
 /**
  * @param array $block the block being rendered.
