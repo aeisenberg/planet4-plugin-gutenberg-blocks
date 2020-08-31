@@ -406,6 +406,7 @@ final class Loader {
 				'wp-element',
 				// Exports the __() function.
 				'wp-i18n',
+				'main',
 			],
 			true
 		);
@@ -569,19 +570,9 @@ DEFERREDCSS;
 					'color' => '#66cc00',
 				],
 				[
-					'name'  => __( 'Dark Tiber', 'planet4-blocks-backend' ),
-					'slug'  => 'dark-tiber',
-					'color' => '#052a30',
-				],
-				[
 					'name'  => __( 'X Dark Blue', 'planet4-blocks-backend' ),
 					'slug'  => 'x-dark-blue',
 					'color' => '#042233',
-				],
-				[
-					'name'  => __( 'Spray', 'planet4-blocks-backend' ),
-					'slug'  => 'spray',
-					'color' => '#86eee7',
 				],
 				[
 					'name'  => __( 'Dark Blue', 'planet4-blocks-backend' ),
