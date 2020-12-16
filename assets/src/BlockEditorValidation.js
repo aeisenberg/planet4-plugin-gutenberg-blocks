@@ -77,10 +77,11 @@ const PrePublishCheckList = () => {
     if ( !validations ) {
       return {block, invalids: []};
     }
+
     const results = Object.keys( validations ).map( attrName => {
       const validate = validations[ attrName ];
 
-      return { attr: attrName, ...validate( block.attributes[ attrName ] ) };
+      return { attr: attrName, ...validate( block.attributes ) };
     } );
     const invalids = results.filter( result => !result.isValid );
 

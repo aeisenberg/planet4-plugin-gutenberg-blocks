@@ -2,6 +2,7 @@ import { Fragment } from '@wordpress/element';
 import { HappypointFrontend } from './HappypointFrontend';
 import { useSelect } from '@wordpress/data';
 import { useState } from '@wordpress/element';
+import { MailingListIframeHelp } from './MailingListIframeHelp';
 
 import { debounce } from 'lodash';
 
@@ -103,21 +104,25 @@ export const HappypointEditor = ({ attributes, setAttributes, isSelected }) => {
               </div>
               <ToggleControl
                 label={__('Use mailing list iframe', 'planet4-blocks-backend')}
-                help={__('Use mailing list iframe', 'planet4-blocks-backend')}
                 value={mailing_list_iframe}
                 checked={mailing_list_iframe}
                 onChange={toAttribute('mailing_list_iframe')}
               />
-              <TextControl
-                label={__('Iframe url', 'planet4-blocks-backend')}
-                placeholder={__('Enter Iframe url', 'planet4-blocks-backend')}
-                help={__('If a url is set in this field and the \'mailing list iframe\' option is enabled, it will override the planet4 engaging network setting.', 'planet4-blocks-backend')}
-                value={iframeUrl}
-                onChange={url => {
-                  setIframeUrl(url);
-                  debounceIframeUrl(url);
-                }}
-              />
+              <MailingListIframeHelp />
+
+              {
+                mailing_list_iframe && 
+                <TextControl
+                  label={__('Iframe url', 'planet4-blocks-backend')}
+                  placeholder={__('Enter Iframe url', 'planet4-blocks-backend')}
+                  help={__('If a url is set in this field and the \'mailing list iframe\' option is enabled, it will override the planet4 engaging network setting.', 'planet4-blocks-backend')}
+                  value={iframeUrl}
+                  onChange={url => {
+                    setIframeUrl(url);
+                    debounceIframeUrl(url);
+                  }}
+                />
+              }
               {id && 0 < id &&
                 <div className="wp-block-master-theme-happypoint__FocalPointPicker">
                   <FocalPointPicker

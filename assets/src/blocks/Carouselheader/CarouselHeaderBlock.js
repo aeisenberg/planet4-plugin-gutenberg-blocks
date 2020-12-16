@@ -151,7 +151,7 @@ export class CarouselHeaderBlock {
               link_url_new_tab: false,
             }
           ],
-          validation: slides => {
+          validation: ({ slides }) => {
             const invalidSlides = slides.filter(slide => slide.image === null);
 
             const isValid = invalidSlides.length === 0;

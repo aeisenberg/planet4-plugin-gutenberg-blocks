@@ -1,4 +1,5 @@
 import { HappypointEditor } from './HappypointEditor';
+import { HappypointV1 } from './HappypointV1';
 
 export class HappypointBlock {
   constructor() {
@@ -26,6 +27,15 @@ export class HappypointBlock {
         },
         iframe_url: {
           type: 'string',
+          validation: ({ iframe_url, mailing_list_iframe }) => {
+            const isValid = mailing_list_iframe === false || iframe_url !== '';
+            const messages = [__(
+              'Happypoint: "Use mailing list iframe" is set to "On" but there is no IFrame URL',
+              'planet4-blocks-backend'
+            )];
+
+            return { isValid, messages };
+          }
         },
         id: {
           type: 'number',
@@ -38,7 +48,10 @@ export class HappypointBlock {
       edit: HappypointEditor,
       save() {
         return null;
-      }
+      },
+      deprecated: [
+        HappypointV1,
+      ],
     });
   }
 }
