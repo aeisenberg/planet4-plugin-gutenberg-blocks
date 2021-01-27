@@ -4,19 +4,19 @@
 @import "~bootstrap/scss/tooltip";
 @import "~bootstrap/scss/buttons";
 
-@import "styleguide/src/base/variables";
-@import "styleguide/src/base/colors";
-@import "styleguide/src/base/functions";
-@import "styleguide/src/base/mixins";
-@import "styleguide/src/base/fonts";
-@import "styleguide/src/base/icons";
-@import "styleguide/src/components/buttons";
-@import "styleguide/src/base/typography";
-@import "styleguide/src/layout/tables";
-@import "styleguide/src/layout/navbar";
-@import "styleguide/src/layout/page-header";
-@import "styleguide/src/layout/breadcrumbs";
-@import "styleguide/src/layout/forms";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/variables";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/colors";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/functions";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/mixins";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/fonts";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/icons";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/components/buttons";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/base/typography";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/layout/tables";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/layout/navbar";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/layout/page-header";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/layout/breadcrumbs";
+@import "../../../../../themes/planet4-master-theme/assets/src/scss/layout/forms";
 
 @import "blocks/TableEditor";
 
