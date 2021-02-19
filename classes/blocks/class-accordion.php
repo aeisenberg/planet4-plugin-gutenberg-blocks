@@ -28,9 +28,18 @@ class Accordion extends Base_Block {
 	 * Accordion constructor.
 	 */
 	public function __construct() {	
-		register_block_type(
-			self::BLOCK_NAMESPACE_PREFIX . '/' . self::BLOCK_NAME,
+		add_action( 'init', [ $this, 'register_accordion_block' ] );
+	}
+
+	/**
+	 * Register Accordion block.
+	 */
+	public function register_accordion_block() {	
+		$registered_block_assets = self::register_block_assets();
+		$block_properties = array_merge(
+			$registered_block_assets,
 			[
+				'render_callback' => [ $this, 'render' ],
 				'attributes'    => [
 					'title'       => [
 						'type'    => 'string',
@@ -77,6 +86,11 @@ class Accordion extends Base_Block {
 					],
 				],
 			]
+		);
+	
+		register_block_type(
+			self::BLOCK_NAMESPACE_PREFIX . '/' . self::BLOCK_NAME,
+			$block_properties
 		);
 	}
 
